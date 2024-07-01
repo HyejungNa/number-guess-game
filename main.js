@@ -21,6 +21,7 @@ userInput.addEventListener('focus', function () {
 function pickRandomNum() {
   computerNum = Math.floor(Math.random() * 100) + 1;
   console.log('Answer', computerNum);
+  answerArea.textContent = `The number to guess is ${computerNum}`;
 }
 
 function play() {
@@ -67,17 +68,18 @@ function play() {
     gameOver = true;
     playButton.disabled = true;
     chanceArea.textContent = 'Game Over. Please press Reset to continue';
+    chanceArea.classList.add('alert');
   }
 }
 
 function reset() {
   userInput.value = '';
   pickRandomNum();
-  answerArea.textContent = `The number to guess is ${computerNum}`;
+  answerArea.innerHTML = `The number to guess is <span>${computerNum}</span> `;
   resultArea.innerHTML = initialResultAreaHTML;
   chanceArea.innerHTML = initialChanceAreaHTML;
   resultArea.classList.remove('alert');
-  answerArea.textContent = '';
+  // answerArea.textContent = '';
   playButton.disabled = false;
   gameOver = false;
   chances = 3;

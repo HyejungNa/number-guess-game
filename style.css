@@ -48,7 +48,7 @@ h1 {
 }
 
 #result-area {
-  padding: 20px;
+  padding: 10px;
   font-size: 25px;
 }
 
@@ -64,12 +64,14 @@ h1 {
 #chance-area {
   padding-bottom: 10px;
   font-size: 25px;
+  color: rgb(4, 4, 4);
 }
 
 #answer-area {
   font-weight: bold;
   color: black;
-  font-size: 25px;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 #chance-area span {
