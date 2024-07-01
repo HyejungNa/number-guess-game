@@ -20,7 +20,8 @@ userInput.addEventListener('focus', function () {
 
 function pickRandomNum() {
   computerNum = Math.floor(Math.random() * 100) + 1;
-  console.log('Answer', computerNum);
+  // console.log('Answer', computerNum);
+  answerArea.textContent = `The number to guess is ${computerNum}`;
 }
 
 function play() {
@@ -41,10 +42,9 @@ function play() {
   chances--;
   chanceArea.innerHTML = `You have <span>${chances}</span> times left.`;
 
-  console.log('chances', chances);
+  // console.log('chances', chances);
 
   resultArea.classList.remove('alert');
-  answerArea.textContent = `The number to guess is ${computerNum}`;
 
   if (userValue < computerNum) {
     resultArea.textContent = 'Go up!';
@@ -56,24 +56,17 @@ function play() {
     resultArea.textContent = 'Well Done!';
     resultArea.classList.add('alert');
     chanceArea.textContent = '';
-
     gameOver = true;
   }
 
   history.push(userValue);
-  console.log(history);
+  // console.log(history);
 
-  if (chances < 1) {
+  if (userValue != computerNum && chances < 1) {
     gameOver = true;
     playButton.disabled = true;
     chanceArea.textContent = 'Game Over. Please press Reset to continue';
   }
-  // if (gameOver == true) {
-  //   playButton.disabled = true;
-  //   resultArea.textContent = 'Game Over';
-  //   chanceArea.classList.add('alert');
-  //   chanceArea.textContent = 'Please press Reset to continue';
-  // }
 }
 
 function reset() {
