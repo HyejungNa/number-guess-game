@@ -20,11 +20,12 @@ userInput.addEventListener('focus', function () {
 
 function pickRandomNum() {
   computerNum = Math.floor(Math.random() * 100) + 1;
-  // console.log('Answer', computerNum);
-  answerArea.textContent = `The number to guess is ${computerNum}`;
+  console.log('Answer', computerNum);
 }
 
 function play() {
+  answerArea.textContent = `The number to guess is ${computerNum}`;
+
   let userValue = userInput.value;
 
   if (userValue < 1 || userValue > 100 || isNaN(userValue)) {
@@ -76,6 +77,7 @@ function reset() {
   resultArea.innerHTML = initialResultAreaHTML;
   chanceArea.innerHTML = initialChanceAreaHTML;
   resultArea.classList.remove('alert');
+  answerArea.textContent = '';
   playButton.disabled = false;
   gameOver = false;
   chances = 3;

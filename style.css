@@ -37,6 +37,16 @@ h1 {
   color: navy;
 }
 
+@media (max-width: 768px) {
+  #game-container {
+    width: 80%;
+    text-align: center;
+  }
+  h1 {
+    font-size: 2rem; /* 모바일 장치에서 더 작은 폰트 크기로 설정 */
+  }
+}
+
 #result-area {
   padding: 20px;
   font-size: 25px;
