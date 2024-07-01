@@ -3,14 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Guess My Number</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+DE+Grund:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&family=Playwrite+US+Modern:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4365acded3.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>숫자 맞추기 게임</h1>
-    <div id="result-area">결과가 나옵니다</div>
-    <input type="number" id="user-input" />
-    <button type="button" id="play-button">Go!</button>
+    <div id="game-container">
+      <h1>Guess the Number</h1>
+      <div id="result-area">
+        <i class="fa-solid fa-thumbtack"></i>Please choose a number between
+        <span>1</span> and <span>100</span>.<br />
+        <i class="fa-solid fa-thumbtack"></i>Enter your number and press
+        Play.<br />
+      </div>
+      <div id="chance-area">You have <span>3</span> chances to guess it!</div>
+      <div id="answer-area"></div>
+      <div>
+        <input type="number" id="user-input" />
+        <button type="button" id="play-button">Play</button>
+        <button type="button" id="reset-button">Reset</button>
+      </div>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
